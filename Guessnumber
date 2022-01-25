@@ -1,0 +1,31 @@
+import random
+def game():
+    number = random.randint(1, 30)
+    chance=1
+    while(chance<=9):
+        guessnumber = int(input("please type the number"))
+        if guessnumber<number:
+            print("Guess Number is too Small")
+        elif guessnumber>number:
+            print("Guess Number is too Big")
+        else:
+            print("You Won the Game",guessnumber, "is equal to ",number)
+            choice = input("Do You Want to Play Again")
+            if choice == "Yes" or choice == "Y":
+                game()
+            break
+
+        print("only ", 9 - chance, 'chances is left')
+        chance+=1
+
+    else:
+        print("Game Over Please Try Again")
+        choice=input("Do You Want to Play Again")
+        if choice=="Yes" or choice=="Y":
+            game()
+
+
+
+play=input("Do You Want To Play Game Type Yes or Y")
+if play=="Yes" or play=="Y":
+    game()
